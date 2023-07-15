@@ -3,3 +3,7 @@ repos:
   rev: v4.4.0
   hooks:
   -   id: check-yaml
+- repo: https://github.com/mrgiao1995/standard-go-service
+  rev: 44d71098a5ed459bf69aad8873ac7cba6d21a253
+  hooks:
+  -   id: golangci-lint
