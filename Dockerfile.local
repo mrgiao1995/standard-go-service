@@ -1,19 +1,17 @@
 # This Dockerfile are use for local development
 FROM golang:1.20.5-alpine3.18
 
-WORKDIR /app
+WORKDIR /go/src/app
 
 # Add steps to setup private repo like as Dockerfile if working with private repo
 
 ENV GOPATH=/go
-ENV GOBIN=$GOPATH/bin
-ENV PATH=$PATH:$GOBIN
+ENV PATH=$PATH:$GOPATH/bin
 ENV CGO_ENABLED=0
-ENV GOOS=linux
-ENV GOARC=adm64
 
-COPY . . 
+COPY . .
+
+RUN go mod tidy
+RUN go install github.com/mitranim/gow@latest
 
 EXPOSE $PORT
-
-ENTRYPOINT [ "./local_run.sh" ]
