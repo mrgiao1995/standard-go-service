@@ -1,4 +1,4 @@
-![CI](https://github.com/mrgiao1995/standard-go-service/actions/workflows/ci/badge.svg)
+![CI](https://github.com/mrgiao1995/standard-go-service/actions/workflows/ci.yml/badge.svg)
 
 # Go lang basic GraphQL server
 
